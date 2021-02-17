@@ -9,3 +9,14 @@ n = 10
 for e in (fib(n)):
     print (e, end=' ')
 print('\nThe last fibonacci term from the series is:', fib(n)[-1])
+
+def fibosum(series, f):
+    count = 0
+    a = 0
+    for e in series:
+        count += e
+        a += 1
+        if a == f:
+            break
+    return count
+print(fibosum(fib(n), 5))
