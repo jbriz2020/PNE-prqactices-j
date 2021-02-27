@@ -28,3 +28,28 @@ def seq_count(seq):
         elif d == 'T':
             t += 1
     return {'A': a, 'C': c, 'G': g, 'T': t}
+
+def seq_reverse(seq):
+    rev = ''
+    for base in seq:
+        rev = base + rev
+    return rev
+
+def seq_complement(seq):
+    compl = ''
+    for base in seq:
+        if base == 'A':
+            compl += 'T'
+        elif base == 'C':
+            compl += 'G'
+        elif base == 'G':
+            compl += 'C'
+        elif base == 'T':
+            compl += 'A'
+    return compl
+
+def most_common_base(dictionary):
+    most_common = max(dictionary.values())
+    for k, v in dictionary.items():
+        if v == most_common:
+            return k
