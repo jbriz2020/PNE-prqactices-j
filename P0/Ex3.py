@@ -1,7 +1,6 @@
 import Seq0
 
 GENE_FOLDER = './sequences downloaded/'
-
 gene_list = ['U5', 'ADA', 'FRAT1', 'FXN']
 
 print('-------Exercise3---------')

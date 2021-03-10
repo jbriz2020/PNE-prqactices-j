@@ -1,3 +1,4 @@
+#library of functions
 from pathlib import Path
 
 def seq_ping():
@@ -53,3 +54,29 @@ def most_common_base(dictionary):
     for k, v in dictionary.items():
         if v == most_common:
             return k
+
+
+class Seq:
+    'A class for representing sequences.'
+
+    def __init__(self, strbases):
+        self.strbases = strbases
+        if self.is_valid():
+            print("New sequence created!")
+        else:
+            self.strbases = 'Error'
+            print('INCORRECT Sequence detected')
+
+    def is_valid(self):  # method inside the class
+        for c in self.strbases:
+            if c != 'A' and c != 'C' and c != 'T' and c != 'G':
+                return False
+        return True
+
+    def __str__(self):
+        """Method called when the object is being printed"""
+        return self.strbases
+
+    def len(self):
+        """Calculate the length of the sequence"""
+        return len(self.strbases)
