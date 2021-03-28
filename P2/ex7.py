@@ -1,4 +1,3 @@
-import termcolor
 import colorama
 from Client0 import Client
 from Seq1 import Seq
@@ -25,6 +24,6 @@ while i < len(s.strbases) and count < 10:
     i += 10
     print('Fragment', count, ':', fragment)
     if count % 2 == 0:
-        print(c2.talk('Fragment' + str(count) + ': ' + termcolor.colored(fragment, 'green')))
+        c2.debug_talk('Fragment ' + str(count) + ': ' + fragment)
     else:
-        print(c.talk('Fragment' + str(count) + ': ' + termcolor.colored(fragment, 'green')))
+        c.debug_talk('Fragment' + str(count) + ': ' + fragment)

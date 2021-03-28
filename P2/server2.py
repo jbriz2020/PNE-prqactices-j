@@ -1,15 +1,15 @@
 import socket
-import termcolor
-import colorama
 
-PORT = 12700  # must be a different one per server
-IP = "127.0.0.1"  # however, we can use the same IP
+# Configure the Server's IP and PORT
+PORT = 12700
+IP = "127.0.0.1" #use local IP '127.0.0.1'
 MAX_OPEN_REQUESTS = 5
+
+# Counting the number of connections
 number_con = 0
 
 # create an INET, STREAMing socket
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
 try:
     serversocket.bind((IP, PORT))
     # become a server socket
@@ -17,7 +17,6 @@ try:
     serversocket.listen(MAX_OPEN_REQUESTS)
 
     while True:
-        colorama.init(strip='False')
         # accept connections from outside
         print("Waiting for connections at {}, {} ".format(IP, PORT))
         (clientsocket, address) = serversocket.accept()
@@ -32,7 +31,7 @@ try:
         msg = clientsocket.recv(2048).decode("utf-8")
         print("Message from client: {}".format(msg))
 
-        # Send the message
+        # Send the messag
         message = "Hello from the teacher's server"
         #send_bytes = str.encode(message)
         # We must write bytes, not a string

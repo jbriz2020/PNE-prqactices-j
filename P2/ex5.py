@@ -9,5 +9,5 @@ print(f"---- Practice {PRACTICE}, Exercise {EXERCISE} ----")
 IP = '127.0.0.1'
 PORT = 12000
 c = Client(IP, PORT)
-print(c.talk('Sending U5 gene to server...'))
-print(c.talk(Path('./sequences downloaded/U5').read_text()))
+(c.debug_talk('Sending U5 gene to server...'))
+(c.debug_talk(Path('./sequences downloaded/U5').read_text()))
