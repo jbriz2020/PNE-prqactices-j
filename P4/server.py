@@ -7,7 +7,7 @@ from urllib.parse import urlparse, parse_qs
 # -- Server network parameters
 IP = "127.0.0.1"
 PORT = 8080
-HTML_ASSETS = "./HTML/"
+HTML_ASSETS = "./html/"
 
 
 def read_html_file(filename):
@@ -45,7 +45,7 @@ def process_client(s):
     # blank line
     # Body (content to send)
 
-    # This new contents are written in HTML language
+    # This new contents are written in html language
 
     # -- Status line: We respond that everything is ok (200 code)
     status_line = "HTTP/1.1 200 OK\n"
