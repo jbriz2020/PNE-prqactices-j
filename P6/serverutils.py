@@ -48,7 +48,7 @@ def info(seq): # total length, number of bases and their percentages
     context = {
         'operation': 'info',
         'sequence': seq,
-        'result': 'Total length: ' + str(sl) + '\nA: ' + str(a) + ' (' + str(pa) + '%)' + '\nC: ' + str(c) + ' (' + str(pc) + '%)' +'\nT: ' + str(t) + ' (' + str(pt) + '%)' + '\nG: ' + str(g) + ' (' + str(pg) + '%)'
+        'result': ['Total length: ' + str(sl), 'A: ' + str(a) + ' (' + str(pa) + '%)', 'C: ' + str(c) + ' (' + str(pc) + '%)', 'T: ' + str(t) + ' (' + str(pt) + '%)', 'G: ' + str(g) + ' (' + str(pg) + '%)']
     }
     contents = read_template_html_file('./html/operation.html').render(context=context)
     return contents
