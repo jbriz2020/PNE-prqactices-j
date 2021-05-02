@@ -13,11 +13,9 @@
         {% if context.operation != 'info'%}
         <p>{{context.result}}</p>
     {% else %}
-        <p>{{context.result[0]}}</p>
-        <p>{{context.result[1]}}</p>
-        <p>{{context.result[2]}}</p>
-        <p>{{context.result[3]}}</p>
-        <p>{{context.result[4]}}</p>
+        {% for n in range(0, context.len_r) %}
+            <p>{{context.result[n]}}</p>
+        {% endfor %}
     {% endif %}
     <br>
     <a href="/">Main page</a>

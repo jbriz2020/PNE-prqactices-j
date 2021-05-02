@@ -45,10 +45,12 @@ def info(seq): # total length, number of bases and their percentages
     pc = round((100 * c / sl),1)
     pg = round((100 * g / sl),1)
     pt = round((100 * t / sl),1)
+    result = ['Total length: ' + str(sl), 'A: ' + str(a) + ' (' + str(pa) + '%)', 'C: ' + str(c) + ' (' + str(pc) + '%)', 'T: ' + str(t) + ' (' + str(pt) + '%)', 'G: ' + str(g) + ' (' + str(pg) + '%)']
     context = {
         'operation': 'info',
         'sequence': seq,
-        'result': ['Total length: ' + str(sl), 'A: ' + str(a) + ' (' + str(pa) + '%)', 'C: ' + str(c) + ' (' + str(pc) + '%)', 'T: ' + str(t) + ' (' + str(pt) + '%)', 'G: ' + str(g) + ' (' + str(pg) + '%)']
+        'result': result,
+        'len_r': len(result)
     }
     contents = read_template_html_file('./html/operation.html').render(context=context)
     return contents
