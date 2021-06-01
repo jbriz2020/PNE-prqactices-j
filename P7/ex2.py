@@ -1,4 +1,4 @@
-
+import termcolor
 
 DICT_GENES = {
     "FRAT1": "ENSG00000165879",
@@ -14,4 +14,5 @@ DICT_GENES = {
 }
 
 for key, value in DICT_GENES.items():
-    print(key, '-->', value)
+    termcolor.cprint(key, 'blue')
+    print('-->', value)

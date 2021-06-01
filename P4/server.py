@@ -7,7 +7,7 @@ from urllib.parse import urlparse, parse_qs
 # -- Server network parameters
 IP = "127.0.0.1"
 PORT = 8080
-HTML_ASSETS = "./html/"
+HTML_ASSETS = "./HTML/"
 
 
 def read_html_file(filename):
