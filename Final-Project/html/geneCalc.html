@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Get gene calculations</title>
+    </head>
+    <body style="background-color: palegreen;">
+    <p> The calculations for the gene {{context.gene}} are: </p>
+        <p> Length: {{context.length}} </p>
+        <p>Bases percentage: </p>
+        {% for k, v in context.bases %}
+            <p> {{k}}: {{v}}  </p>
+        {% endfor %}
+        <a href="/">Main page</a>
+    </body>
+</html>
+

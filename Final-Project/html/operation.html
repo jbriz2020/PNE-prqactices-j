@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Seq server OPERATION</title>
+</head>
+<body>
+    <h1>Sequence:</h1>
+    <p>{{context.sequence}}</p>
+    <h1>Operation:</h1>
+    <p>{{context.operation}}</p>
+    <h1>Result:</h1>
+        {% if context.operation != 'info'%}
+        <p>{{context.result}}</p>
+    {% else %}
+        {% for n in range(0, context.len_r) %}
+            <p>{{context.result[n]}}</p>
+        {% endfor %}
+    {% endif %}
+    <br>
+    <a href="/">Main page</a>
+</body>
+</html>

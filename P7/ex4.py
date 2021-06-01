@@ -2,6 +2,11 @@ import http.client
 import json
 from Seq7 import Seq
 
+def print_colored(msg, data, color):
+    from termcolor import cprint, colored
+    print(colored(msg, color), end="")
+    print(data)
+
 DICT_GENES = {
     "FRAT1": "ENSG00000165879",
     "ADA": "ENSG00000196839",
@@ -25,16 +30,21 @@ try:
     id = DICT_GENES[user_gene]
     connection.request("GET", ENDPOINT + id + PARAMS)
     response = connection.getresponse()
+    print("\nServer:", SERVER)
+    print("URL:", SERVER + ENDPOINT + id + PARAMS)
     if response.status == 200:
+        print("Response received!:", response.status, response.reason)
+        print_colored("\nGene: ", user_gene, 'yellow')
         response_dict = json.loads(response.read().decode())
         #print(json.dumps(response_dict, indent=4, sort_keys=True))
+        print_colored("Description:", response_dict["desc"], 'yellow')
         sequence = Seq(response_dict["seq"])
         s_length = sequence.len()
         percentages = sequence.percentage_base(sequence.count_bases(), s_length)
         most_frequent_base = sequence.most_common_base(sequence.count())
-        print("Total length: ", s_length)
-        for value in percentages.values():
-            print(value)
-        print("Most frequent base: ", most_frequent_base)
+        print_colored("Total length: ", s_length, 'yellow')
+        for key, value in percentages.items():
+            print(key, value)
+        print_colored("Most frequent base: ", most_frequent_base, 'yellow')
 except KeyError:
     print("The gene is not inside our dictionary. Choose one of the following:", list(DICT_GENES.keys()))

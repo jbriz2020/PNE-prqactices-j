@@ -41,19 +41,19 @@ while True:
     if command == '"PING"':
         Server_utils.ping(cs)
 
-    elif command == '"GET"':
+    elif command.startswith('"GET'):
         Server_utils.get(list_sequences, cs, argument)
 
-    elif command == '"INFO"':
+    elif command.startswith('"INFO'):
         Server_utils.info(argument, cs)
 
-    elif command == '"COMP"':
+    elif command.startswith('"COMP'):
         Server_utils.comp(argument, cs)
 
-    elif command == '"REV"':
+    elif command.startswith('"REV'):
         Server_utils.rev(argument, cs)
 
-    elif command == '"GENE"':
+    elif command.startswith('"GENE'):
         Server_utils.gene(argument, cs)
 
     else:

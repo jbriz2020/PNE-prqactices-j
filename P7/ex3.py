@@ -22,12 +22,14 @@ PARAMS = "?content-type=application/json"
 connection = http.client.HTTPConnection(SERVER)
 connection.request("GET", ENDPOINT + ID + PARAMS)
 response = connection.getresponse()
+print('Server:', SERVER)
+print('URL:', SERVER + ENDPOINT + ID + PARAMS)
 print("Response received!:", response.status, response.reason)
 # to check if the answer was correct
 if response.status == 200:
     response = json.loads(response.read().decode())
-    print(json.dumps(response, indent=4, sort_keys=True))
-    print("Gene:", ID)
+    #print(json.dumps(response, indent=4, sort_keys=True))
+    print("\nGene:", 'MIR633')
     print("Description:", response["desc"])
     print("Bases:", response["seq"])
 elif response.status == 404:

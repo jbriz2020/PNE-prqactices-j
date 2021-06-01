@@ -7,7 +7,6 @@ def print_colored(msg, data, color):
     print(colored(msg, color), end="")
     print(data)
 
-
 DICT_GENES = {
     "FRAT1": "ENSG00000165879",
     "ADA": "ENSG00000196839",
@@ -31,16 +30,17 @@ try:
         connection.request("GET", ENDPOINT + id + PARAMS)
         response = connection.getresponse()
         if response.status == 200:
+            print_colored("\nGene: ", key, 'yellow')
             response_dict = json.loads(response.read().decode())
             #print(json.dumps(response_dict, indent=4, sort_keys=True))
+            print_colored("Description:", response_dict["desc"], 'yellow')
             sequence = Seq(response_dict["seq"])
             s_length = sequence.len()
             percentages = sequence.percentage_base(sequence.count_bases(), s_length)
             most_frequent_base = sequence.most_common_base(sequence.count())
-            print_colored("Gene: ", key, 'yellow')
             print_colored("Total length: ", s_length, 'yellow')
             for key, value in percentages.items():
-                print_colored(key + ': ', value, 'blue')
+                print_colored(key, value, 'blue')
             print_colored("Most frequent base: ", most_frequent_base, 'yellow')
 except KeyError:
     print("The gene is not inside our dictionary. Choose one of the following:", list(DICT_GENES.keys()))

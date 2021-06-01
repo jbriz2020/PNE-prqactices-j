@@ -1,0 +1,429 @@
+TEST REPORT BASIC LEVEL
+-------------------------------------------------------
+------>          listSpecies endpoint:
+
+    TEST 1: (leaving in blank)
+Input: http://localhost:8081/listSpecies?limit=
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 2: (putting an invalid number)
+Input: http://localhost:8081/listSpecies?limit=seihdszn
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 3: (putting a valid number)
+Input: http://localhost:8081/listSpecies?limit=10
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+        <head>
+            <meta charset="UTF-8">
+            <title>Get listSpecies</title>
+        </head>
+        <body style="background-color: pink;">
+            <p>The total number of species in the ensemble is: 310</p>
+            <p>The limit you have selected is: 10</p>
+            <p>The names of the species are: </p>
+
+                <p> · apteryx owenii </p>
+
+                <p> · parambassis ranga </p>
+
+                <p> · cyanistes caeruleus </p>
+
+                <p> · monodon monoceros </p>
+
+                <p> · castor canadensis </p>
+
+                <p> · cyclopterus lumpus </p>
+
+                <p> · cricetulus griseus chok1gshd </p>
+
+                <p> · cottoperca gobio </p>
+
+                <p> · mesocricetus auratus </p>
+
+                <p> · bos mutus </p>
+
+            <a href="/">Main page</a>
+        </body>
+    </html>
+
+    TEST 4: (putting a valid number)
+Input: http://localhost:8081/listSpecies?limit=25
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+        <head>
+            <meta charset="UTF-8">
+            <title>Get listSpecies</title>
+        </head>
+        <body style="background-color: pink;">
+            <p>The total number of species in the ensemble is: 310</p>
+            <p>The limit you have selected is: 25</p>
+            <p>The names of the species are: </p>
+
+                <p> · apteryx owenii </p>
+
+                <p> · parambassis ranga </p>
+
+                <p> · cyanistes caeruleus </p>
+
+                <p> · monodon monoceros </p>
+
+                <p> · castor canadensis </p>
+
+                <p> · cyclopterus lumpus </p>
+
+                <p> · cricetulus griseus chok1gshd </p>
+
+                <p> · cottoperca gobio </p>
+
+                <p> · mesocricetus auratus </p>
+
+                <p> · bos mutus </p>
+
+                <p> · betta splendens </p>
+
+                <p> · astatotilapia calliptera </p>
+
+                <p> · procavia capensis </p>
+
+                <p> · bubo bubo </p>
+
+                <p> · coturnix japonica </p>
+
+                <p> · takifugu rubripes </p>
+
+                <p> · scleropages formosus </p>
+
+                <p> · laticauda laticaudata </p>
+
+                <p> · mus musculus cbaj </p>
+
+                <p> · gopherus agassizii </p>
+
+                <p> · neolamprologus brichardi </p>
+
+                <p> · oncorhynchus kisutch </p>
+
+                <p> · otus sunia </p>
+
+                <p> · maylandia zebra </p>
+
+                <p> · urocitellus parryii </p>
+
+            <a href="/">Main page</a>
+        </body>
+    </html>
+
+
+------>          karyotype endpoint:
+
+    TEST 1: (leaving in blank)
+Input: http://localhost:8081/karyotype?species=
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 2: (inserting a wrong species)
+Input: localhost:8081/karyotype?species=coronavirus
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 3: (inserting a valid species)
+Input: http://localhost:8081/karyotype?species=human
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+        <head>
+            <meta charset="UTF-8">
+            <title>Get karyotype</title>
+        </head>
+        <body style="background-color: pink;">
+            <p> The names of the chromosomes are: </p>
+
+                <p> 1 </p>
+
+                <p> 2 </p>
+
+                <p> 3 </p>
+
+                <p> 4 </p>
+
+                <p> 5 </p>
+
+                <p> 6 </p>
+
+                <p> 7 </p>
+
+                <p> 8 </p>
+
+                <p> 9 </p>
+
+                <p> 10 </p>
+
+                <p> 11 </p>
+
+                <p> 12 </p>
+
+                <p> 13 </p>
+
+                <p> 14 </p>
+
+                <p> 15 </p>
+
+                <p> 16 </p>
+
+                <p> 17 </p>
+
+                <p> 18 </p>
+
+                <p> 19 </p>
+
+                <p> 20 </p>
+
+                <p> 21 </p>
+
+                <p> 22 </p>
+
+                <p> X </p>
+
+                <p> Y </p>
+
+                <p> MT </p>
+
+            <a href="/">Main page</a>
+        </body>
+    </html>
+
+    TEST 4: (inserting a valid species)
+Input: http://localhost:8081/karyotype?species=cat
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+        <head>
+            <meta charset="UTF-8">
+            <title>Get karyotype</title>
+        </head>
+        <body style="background-color: pink;">
+            <p> The names of the chromosomes are: </p>
+
+                <p> A1 </p>
+
+                <p> A2 </p>
+
+                <p> A3 </p>
+
+                <p> B1 </p>
+
+                <p> B2 </p>
+
+                <p> B3 </p>
+
+                <p> B4 </p>
+
+                <p> C1 </p>
+
+                <p> C2 </p>
+
+                <p> D1 </p>
+
+                <p> D2 </p>
+
+                <p> D3 </p>
+
+                <p> D4 </p>
+
+                <p> E1 </p>
+
+                <p> E2 </p>
+
+                <p> E3 </p>
+
+                <p> F1 </p>
+
+                <p> F2 </p>
+
+                <p> X </p>
+
+                <p> MT </p>
+
+            <a href="/">Main page</a>
+        </body>
+    </html>
+
+
+------>          chromosomeLength endpoint:
+
+    TEST 1: (leaving both in blank)
+Input:
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 2: (invalid species and leaving chromosome in blank)
+Input: http://localhost:8081/chromosomeLength?species=coronavirs&chromo=
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 3: (valid species and leaving chromosome in blank)
+Input: http://localhost:8081/chromosomeLength?species=human&chromo=
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 4: (blank species and valid chromosome)
+Input: http://localhost:8081/chromosomeLength?species=&chromo=12
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 5: (invalid species and valid chromosome)
+Input: http://localhost:8081/chromosomeLength?species=coronavirus&chromo=12
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 6: (valid species and invalid chromosome)
+Input: http://localhost:8081/chromosomeLength?species=cat&chromo=10
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Bases server</title>
+      </head>
+      <body style="background-color: red;">
+        <h1>ERROR</h1>
+        <p>Welcome to the DATA ERROR server</p>
+        <p>The data you have entered does not exist in the ensembl.</p>
+      </body>
+    </html>
+
+    TEST 6: (valid species and valid chromosome)
+Input: http://localhost:8081/chromosomeLength?species=human&chromo=X
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+        <head>
+            <meta charset="UTF-8">
+            <title>Get chromosome length</title>
+        </head>
+        <body style="background-color: pink;">
+            <p> The length of the chromosome X is: </p>
+            <p> 156040895 </p>
+             <a href="/">Main page</a>
+        </body>
+    </html>
+
+    TEST 7: (valid species and valid chromosome)
+Input: http://localhost:8081/chromosomeLength?species=mouse&chromo=12
+Output:
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+        <head>
+            <meta charset="UTF-8">
+            <title>Get chromosome length</title>
+        </head>
+        <body style="background-color: pink;">
+            <p> The length of the chromosome 12 is: </p>
+            <p> 120092757 </p>
+             <a href="/">Main page</a>
+        </body>
+    </html>

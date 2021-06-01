@@ -3,7 +3,7 @@ from Client0 import Client
 c = Client('127.0.0.1', 8080)
 
 print('Testing Ping...')
-c.talk('PING')
+c.talk('"PING"')
 
 print('Testing Get...')
 for i in range(0,5):

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Main page</title>
+      </head>
+      <body style="background-color: lavender;">
+        <h1>Browsing Human and Vertebrates genome</h1>
+        <h2>BASIC Level Services</h2>
+        <form action="listSpecies" method="get">
+            1) List of species in the genome database
+            <br>
+            Limit: <input type="text" name="limit" style="background-color: lightcyan;">
+            <br>
+            <input type="submit" value="SEND" style="background-color: lightcyan;">
+        </form>
+        <br>
+        <form action="karyotype" method="get">
+            2) Information about the karyotype:
+            <br>
+            Select the species: <input type="text" name="species" style="background-color: lightcyan;">
+            <br>
+            <input type="submit" value="SEND" style="background-color: lightcyan;">
+        </form>
+        <br>
+        <form action="chromosomeLength" method="get">
+            3) Chromosome length:
+            <br>
+            Select the species: <input type="text" name="species" style="background-color: lightcyan;">
+            <br>
+            Select a chromosome: <input type="text" name="chromo" style="background-color: lightcyan;">
+            <br>
+            <input type="submit" value="SEND" style="background-color: lightcyan;">
+        </form>
+        <br>
+        <h2>MEDIUM Level Services</h2>
+        <form action="geneSeq" method="get">
+            4) Gene sequence:
+            <br>
+            Select a human gene:
+            <select name="gene" style="background-color: lightcyan;">
+                {% for n in context.list %}
+                <option value="{{n}}">{{n}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <input type="submit" value="SEND" style="background-color: lightcyan;">
+        </form>
+        <br>
+        <form action="geneInfo" method="get">
+            5) Gene information:
+            <br>
+            Select a human gene:
+             <select name="gene" style="background-color: lightcyan;">
+                {% for n in context.list %}
+                <option value="{{n}}">{{n}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <input type="submit" value="SEND" style="background-color: lightcyan;">
+        </form>
+         <br>
+        <form action="geneCalc" method="get">
+            6) Gene calculations:
+            <br>
+            Select a human gene:
+            <select name="gene" style="background-color: lightcyan;">
+                {% for n in context.list %}
+                <option value="{{n}}">{{n}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <input type="submit" value="SEND" style="background-color: lightcyan;">
+        </form>
+      </body>
+    </html>

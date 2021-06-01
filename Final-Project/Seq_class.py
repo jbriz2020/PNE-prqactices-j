@@ -60,7 +60,7 @@ class Seq:
         c = str(round(count_bases[1]*100 / seq_len, 2)) + "%"
         g = str(round(count_bases[2]*100 / seq_len, 2)) + "%"
         t = str(round(count_bases[3]*100 / seq_len, 2)) + "%"
-        return {"A:": a, "C:": c, "G:": g, "T:": t}
+        return {"A": a, "C": c, "G": g, "T": t}
 
     def reverse(self):
         if self.strbases == Seq.NULL_SEQUENCE:
