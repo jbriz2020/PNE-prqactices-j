@@ -32,26 +32,24 @@ while True:
     formatted_msg = Server_utils.format_command(msg)
     formatted_msg = formatted_msg.split(" ")
     if len(formatted_msg) == 1:
-        command = formatted_msg[0]
-        #print(command)
+        command = '"' + formatted_msg[0] + '"'
     else:
         command = formatted_msg[0] + '"'
         argument = '"' + formatted_msg[1]
-        #print(command, argument)
 
     if command == '"PING"':
         Server_utils.ping(cs)
 
-    elif command == '"GET"':
+    elif command == 'GET"':
         Server_utils.get(list_sequences, cs, argument)
 
-    elif command == '"INFO"':
+    elif command == 'INFO"':
         Server_utils.info(argument, cs)
 
-    elif command == '"COMP"':
+    elif command == 'COMP"':
         Server_utils.comp(argument, cs)
 
-    elif command == '"REV"':
+    elif command == 'REV"':
         Server_utils.rev(argument, cs)
 
     elif command == 'GENE"':
