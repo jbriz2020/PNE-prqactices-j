@@ -13,7 +13,7 @@ c = Client(IP, PORT) #conn to server1
 c2 = Client(IP, PORT2) #conn to server2
 
 s = Seq()
-s.read_fasta('./sequences downloaded/U5')
+s.read_fasta('./sequences_downloaded/U5')
 
 count = 0
 i = 0

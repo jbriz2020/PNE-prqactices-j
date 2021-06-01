@@ -10,7 +10,7 @@ PORT = 8080
 
 LIST_SEQUENCES = ["ACTA", "CTGC", "AATT", "GACT", "AGGA"]
 
-LIST_GENES = ['ADA', 'FRAT1', 'FXN', 'RNU6-269P', 'U5']
+LIST_GENES = ['ADA', 'FRAT1', 'FXN', 'RNU6_269P', 'U5']
 
 BASE_INFORMATION = {
     "A": {"link": "https://en.wikipedia.org/wiki/Adenine",

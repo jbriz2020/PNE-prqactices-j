@@ -1,6 +1,6 @@
 from Client0 import Client
 
-c = Client('127.0.0.1', 8080)
+c = Client('127.0.0.1', 8082)
 
 print('Testing Ping...')
 c.talk('"PING"')
@@ -25,4 +25,3 @@ for gene in gene_list:
     msg = 'GENE ' + gene
     print('"' + msg + '"')
     c.talk(msg)
-

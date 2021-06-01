@@ -4,8 +4,9 @@ import Server_utils
 import termcolor
 
 list_sequences = ["ACTA", "CTGC", "AATT", "GACT", "AGGA"]
-# gene_list = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P"]
-PORT = 8080
+#gene_list = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P"]
+
+PORT = 8082
 IP = "127.0.0.1"
 ls = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ls.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -31,32 +32,33 @@ while True:
     formatted_msg = Server_utils.format_command(msg)
     formatted_msg = formatted_msg.split(" ")
     if len(formatted_msg) == 1:
-        command = '"' + formatted_msg[0] + '"'
-        print(command)
+        command = formatted_msg[0]
+        #print(command)
     else:
-        command = '"' + formatted_msg[0]
-        argument = formatted_msg[1] + '"'
-        print(command, argument)
+        command = formatted_msg[0] + '"'
+        argument = '"' + formatted_msg[1]
+        #print(command, argument)
 
     if command == '"PING"':
         Server_utils.ping(cs)
 
-    elif command.startswith('"GET'):
+    elif command == '"GET"':
         Server_utils.get(list_sequences, cs, argument)
 
-    elif command.startswith('"INFO'):
+    elif command == '"INFO"':
         Server_utils.info(argument, cs)
 
-    elif command.startswith('"COMP'):
+    elif command == '"COMP"':
         Server_utils.comp(argument, cs)
 
-    elif command.startswith('"REV'):
+    elif command == '"REV"':
         Server_utils.rev(argument, cs)
 
-    elif command.startswith('"GENE'):
+    elif command == 'GENE"':
         Server_utils.gene(argument, cs)
 
     else:
         response = "Not available command"
+        print(command)
         termcolor.cprint(response, "red")
         cs.send(response.encode())

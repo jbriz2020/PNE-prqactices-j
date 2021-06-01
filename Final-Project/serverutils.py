@@ -62,7 +62,7 @@ def rev(seq):
 
 
 def gene(seq_name):
-    PATH = './sequences downloaded/' + seq_name
+    PATH = './sequences_downloaded/' + seq_name
     s1 = Seq()
     s1.read_fasta(PATH)
     context = {

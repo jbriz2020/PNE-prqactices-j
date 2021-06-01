@@ -1,6 +1,6 @@
 import Seq0
 
-FOLDER = './sequences downloaded/'
+FOLDER = './sequences_downloaded/'
 ID = 'U5'
 
 U5_seq = Seq0.seq_read_fasta(FOLDER + ID)
